@@ -1,20 +1,24 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: client-android-eas.yml.backup
 name: Android Client - EAS Build
 
 on:
-  workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/client-android-eas.yml
-      - apps/eas-expo-go/**
-      - apps/expo-go/android/**
-  push:
-    branches: [main, sdk-*]
-    paths:
-      - .github/workflows/client-android-eas.yml
-      - apps/eas-expo-go/**
-      - apps/expo-go/android/**
-  schedule:
-    - cron: '20 5 * * *' # 5:20 AM UTC time every day
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   pull_request:
+#     paths:
+#       - .github/workflows/client-android-eas.yml
+#       - apps/eas-expo-go/**
+#       - apps/expo-go/android/**
+#   push:
+#     branches: [main, sdk-*]
+#     paths:
+#       - .github/workflows/client-android-eas.yml
+#       - apps/eas-expo-go/**
+#       - apps/expo-go/android/**
+#   schedule:
+#     - cron: '20 5 * * *' # 5:20 AM UTC time every day
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

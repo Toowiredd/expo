@@ -1,12 +1,16 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: publish-canaries.yml.backup
 name: Publish Canaries
 
 on:
-  workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/publish-canaries.yml
-  schedule:
-    - cron: 0 1 * * * # Nightly at 1:00 AM UTC
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   pull_request:
+#     paths:
+#       - .github/workflows/publish-canaries.yml
+#   schedule:
+#     - cron: 0 1 * * * # Nightly at 1:00 AM UTC
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

@@ -1,18 +1,22 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: home.yml.backup
 name: Home app
 
 on:
-  workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/home.yml
-      - apps/expo-go/**
-      - yarn.lock
-  push:
-    branches: [main, 'sdk-*']
-    paths:
-      - .github/workflows/home.yml
-      - apps/expo-go/**
-      - yarn.lock
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   pull_request:
+#     paths:
+#       - .github/workflows/home.yml
+#       - apps/expo-go/**
+#       - yarn.lock
+#   push:
+#     branches: [main, 'sdk-*']
+#     paths:
+#       - .github/workflows/home.yml
+#       - apps/expo-go/**
+#       - yarn.lock
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

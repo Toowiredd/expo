@@ -1,9 +1,13 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: issue-triage.yml.backup
 name: Issue Triage
 on:
-  issues:
-    types: [labeled]
-  pull_request_target:
-    types: [labeled]
+  workflow_dispatch:  # Manual trigger only
+#   issues:
+#     types: [labeled]
+#   pull_request_target:
+#     types: [labeled]
 
 jobs:
   needs-repro:

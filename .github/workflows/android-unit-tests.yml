@@ -1,26 +1,30 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: android-unit-tests.yml.backup
 name: Android Unit Tests
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/android-unit-tests.yml
-      - apps/expo-go/android/**
-      - fastlane/**
-      - packages/**/android/**
-      - tools/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
-  pull_request:
-    paths:
-      - .github/workflows/android-unit-tests.yml
-      - apps/expo-go/android/**
-      - fastlane/**
-      - packages/**/android/**
-      - tools/**
-      - yarn.lock
-      - '!packages/@expo/cli/**'
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   push:
+#     branches: [main]
+#     paths:
+#       - .github/workflows/android-unit-tests.yml
+#       - apps/expo-go/android/**
+#       - fastlane/**
+#       - packages/**/android/**
+#       - tools/**
+#       - yarn.lock
+#       - '!packages/@expo/cli/**'
+#   pull_request:
+#     paths:
+#       - .github/workflows/android-unit-tests.yml
+#       - apps/expo-go/android/**
+#       - fastlane/**
+#       - packages/**/android/**
+#       - tools/**
+#       - yarn.lock
+#       - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

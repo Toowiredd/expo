@@ -1,11 +1,15 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: issue-opened.yml.backup
 name: Process a newly opened issue
 
 env:
   TRUSTED_USERS: 'RodolfoGS awinograd hesyifei LinusU SimenB actuallymentor derekstavis wscotten wcandillon tevonsb MaRaSu devashishsethia bndkt'
 
 on:
-  issues:
-    types: [opened]
+  workflow_dispatch:  # Manual trigger only
+#   issues:
+#     types: [opened]
 
 jobs:
   check-if-trusted:

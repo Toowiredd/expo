@@ -1,16 +1,20 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: expotools.yml.backup
 name: Expotools
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: [main, 'sdk-*']
-    paths:
-      - .github/workflows/expotools.yml
-      - tools/**
-  pull_request:
-    paths:
-      - .github/workflows/expotools.yml
-      - tools/**
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   push:
+#     branches: [main, 'sdk-*']
+#     paths:
+#       - .github/workflows/expotools.yml
+#       - tools/**
+#   pull_request:
+#     paths:
+#       - .github/workflows/expotools.yml
+#       - tools/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

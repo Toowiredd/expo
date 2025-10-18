@@ -1,41 +1,45 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: cli.yml.backup
 name: CLI
 
 on:
-  push:
-    branches: [main, 'sdk-*']
-    paths:
-      - .github/workflows/cli.yml
-      - packages/@expo/cli/**
-      - packages/@expo/metro-runtime/**
-      - packages/@expo/metro-config/src/**
-      - packages/@expo/config/src/**
-      - packages/@expo/config-plugins/src/**
-      - packages/@expo/env/src/**
-      - packages/@expo/json-file/src/**
-      - packages/@expo/package-manager/src/**
-      - packages/@expo/prebuild-config/src/**
-      - packages/@expo/server/src/**
-      - packages/create-expo/**
-      - packages/expo-router/**
-      - yarn.lock
-  pull_request:
-    paths:
-      - .github/workflows/cli.yml
-      - packages/@expo/cli/**
-      - packages/@expo/metro-runtime/**
-      - packages/@expo/metro-config/src/**
-      - packages/@expo/config/src/**
-      - packages/@expo/config-plugins/src/**
-      - packages/@expo/env/src/**
-      - packages/@expo/json-file/src/**
-      - packages/@expo/package-manager/src/**
-      - packages/@expo/prebuild-config/src/**
-      - packages/@expo/server/src/**
-      - packages/create-expo/**
-      - packages/expo-router/**
-      - yarn.lock
-  schedule:
-    - cron: 0 14 * * *
+  workflow_dispatch:  # Manual trigger only
+#   push:
+#     branches: [main, 'sdk-*']
+#     paths:
+#       - .github/workflows/cli.yml
+#       - packages/@expo/cli/**
+#       - packages/@expo/metro-runtime/**
+#       - packages/@expo/metro-config/src/**
+#       - packages/@expo/config/src/**
+#       - packages/@expo/config-plugins/src/**
+#       - packages/@expo/env/src/**
+#       - packages/@expo/json-file/src/**
+#       - packages/@expo/package-manager/src/**
+#       - packages/@expo/prebuild-config/src/**
+#       - packages/@expo/server/src/**
+#       - packages/create-expo/**
+#       - packages/expo-router/**
+#       - yarn.lock
+#   pull_request:
+#     paths:
+#       - .github/workflows/cli.yml
+#       - packages/@expo/cli/**
+#       - packages/@expo/metro-runtime/**
+#       - packages/@expo/metro-config/src/**
+#       - packages/@expo/config/src/**
+#       - packages/@expo/config-plugins/src/**
+#       - packages/@expo/env/src/**
+#       - packages/@expo/json-file/src/**
+#       - packages/@expo/package-manager/src/**
+#       - packages/@expo/prebuild-config/src/**
+#       - packages/@expo/server/src/**
+#       - packages/create-expo/**
+#       - packages/expo-router/**
+#       - yarn.lock
+#   schedule:
+#     - cron: 0 14 * * *
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

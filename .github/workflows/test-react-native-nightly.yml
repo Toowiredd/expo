@@ -1,16 +1,20 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: test-react-native-nightly.yml.backup
 name: Test React Native nightly build for Expo Modules
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '0 3 * * *' # 03:00 AM UTC everyday
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/test-react-native-nightly.yml
-  pull_request:
-    paths:
-      - .github/workflows/test-react-native-nightly.yml
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   schedule:
+#     - cron: '0 3 * * *' # 03:00 AM UTC everyday
+#   push:
+#     branches: [main]
+#     paths:
+#       - .github/workflows/test-react-native-nightly.yml
+#   pull_request:
+#     paths:
+#       - .github/workflows/test-react-native-nightly.yml
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

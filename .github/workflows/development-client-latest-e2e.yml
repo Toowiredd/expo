@@ -1,9 +1,13 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: development-client-latest-e2e.yml.backup
 name: Development Client latest e2e
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '0 0 * * SUN' # 0:00 AM UTC time every Sunday
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   schedule:
+#     - cron: '0 0 * * SUN' # 0:00 AM UTC time every Sunday
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

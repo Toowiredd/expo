@@ -1,34 +1,38 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: ios-unit-tests.yml.backup
 name: iOS Unit Tests
 
 on:
-  workflow_dispatch: {}
-  pull_request:
-    paths:
-      - .github/workflows/ios-unit-tests.yml
-      - apps/expo-go/ios/**
-      - packages/**/ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/commands/IosNativeUnitTests.ts
-      - tools/src/commands/NativeUnitTests.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - '!packages/@expo/cli/**'
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/ios-unit-tests.yml
-      - apps/expo-go/ios/**
-      - packages/**/ios/**
-      - tools/src/dynamic-macros/**
-      - tools/src/commands/IosGenerateDynamicMacros.ts
-      - tools/src/commands/IosNativeUnitTests.ts
-      - tools/src/commands/NativeUnitTests.ts
-      - secrets/**
-      - fastlane/**
-      - Gemfile.lock
-      - '!packages/@expo/cli/**'
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   pull_request:
+#     paths:
+#       - .github/workflows/ios-unit-tests.yml
+#       - apps/expo-go/ios/**
+#       - packages/**/ios/**
+#       - tools/src/dynamic-macros/**
+#       - tools/src/commands/IosGenerateDynamicMacros.ts
+#       - tools/src/commands/IosNativeUnitTests.ts
+#       - tools/src/commands/NativeUnitTests.ts
+#       - secrets/**
+#       - fastlane/**
+#       - Gemfile.lock
+#       - '!packages/@expo/cli/**'
+#   push:
+#     branches: [main]
+#     paths:
+#       - .github/workflows/ios-unit-tests.yml
+#       - apps/expo-go/ios/**
+#       - packages/**/ios/**
+#       - tools/src/dynamic-macros/**
+#       - tools/src/commands/IosGenerateDynamicMacros.ts
+#       - tools/src/commands/IosNativeUnitTests.ts
+#       - tools/src/commands/NativeUnitTests.ts
+#       - secrets/**
+#       - fastlane/**
+#       - Gemfile.lock
+#       - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

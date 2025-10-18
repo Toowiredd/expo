@@ -1,21 +1,25 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: fingerprint.yml.backup
 name: Fingerprint
 
 on:
-  push:
-    branches: [main, 'sdk-*']
-    paths:
-      - .github/workflows/fingerprint.yml
-      - packages/@expo/fingerprint/**
-      - packages/create-expo/**
-      - yarn.lock
-  pull_request:
-    paths:
-      - .github/workflows/fingerprint.yml
-      - packages/@expo/fingerprint/**
-      - packages/create-expo/**
-      - yarn.lock
-  schedule:
-    - cron: 0 14 * * *
+  workflow_dispatch:  # Manual trigger only
+#   push:
+#     branches: [main, 'sdk-*']
+#     paths:
+#       - .github/workflows/fingerprint.yml
+#       - packages/@expo/fingerprint/**
+#       - packages/create-expo/**
+#       - yarn.lock
+#   pull_request:
+#     paths:
+#       - .github/workflows/fingerprint.yml
+#       - packages/@expo/fingerprint/**
+#       - packages/create-expo/**
+#       - yarn.lock
+#   schedule:
+#     - cron: 0 14 * * *
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

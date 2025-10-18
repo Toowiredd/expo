@@ -1,18 +1,22 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: development-client.yml.backup
 name: Development Client
 
 on:
-  workflow_dispatch: {}
-  # This task will fail due to migration to `expo-modules-core`.
-  # We temporary disable it.
-  # pull_request:
-  #   paths:
-  #     - .github/workflows/development-client.yml
-  #     - packages/expo-dev-*/**
-  # push:
-  #   branches: [main]
-  #   paths:
-  #     - .github/workflows/development-client.yml
-  #     - packages/expo-dev-*/**
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   # This task will fail due to migration to `expo-modules-core`.
+#   # We temporary disable it.
+#   # pull_request:
+#   #   paths:
+#   #     - .github/workflows/development-client.yml
+#   #     - packages/expo-dev-*/**
+#   # push:
+#   #   branches: [main]
+#   #   paths:
+#   #     - .github/workflows/development-client.yml
+#   #     - packages/expo-dev-*/**
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

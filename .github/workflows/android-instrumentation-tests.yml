@@ -1,34 +1,38 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: android-instrumentation-tests.yml.backup
 name: Android Instrumentation Tests
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/android-instrumentation-tests.yml
-      - apps/expo-go/android/**
-      - fastlane/**
-      # - packages/**/android/**
-      - packages/expo-eas-client/android/**
-      - packages/expo-json-utils/android/**
-      - packages/expo-manifests/android/**
-      - packages/expo-updates/android/**
-      - tools/src/commands/AndroidNativeUnitTests.ts
-      - yarn.lock
-      - '!packages/@expo/cli/**'
-  pull_request:
-    paths:
-      - .github/workflows/android-instrumentation-tests.yml
-      - apps/expo-go/android/**
-      - fastlane/**
-      # - packages/**/android/**
-      - packages/expo-eas-client/android/**
-      - packages/expo-json-utils/android/**
-      - packages/expo-manifests/android/**
-      - packages/expo-updates/android/**
-      - tools/src/commands/AndroidNativeUnitTests.ts
-      - yarn.lock
-      - '!packages/@expo/cli/**'
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   push:
+#     branches: [main]
+#     paths:
+#       - .github/workflows/android-instrumentation-tests.yml
+#       - apps/expo-go/android/**
+#       - fastlane/**
+#       # - packages/**/android/**
+#       - packages/expo-eas-client/android/**
+#       - packages/expo-json-utils/android/**
+#       - packages/expo-manifests/android/**
+#       - packages/expo-updates/android/**
+#       - tools/src/commands/AndroidNativeUnitTests.ts
+#       - yarn.lock
+#       - '!packages/@expo/cli/**'
+#   pull_request:
+#     paths:
+#       - .github/workflows/android-instrumentation-tests.yml
+#       - apps/expo-go/android/**
+#       - fastlane/**
+#       # - packages/**/android/**
+#       - packages/expo-eas-client/android/**
+#       - packages/expo-json-utils/android/**
+#       - packages/expo-manifests/android/**
+#       - packages/expo-updates/android/**
+#       - tools/src/commands/AndroidNativeUnitTests.ts
+#       - yarn.lock
+#       - '!packages/@expo/cli/**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}

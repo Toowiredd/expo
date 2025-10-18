@@ -1,9 +1,13 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: check-issues-nightly.yml.backup
 name: Check issues with pending validation labels
 
 on:
-  workflow_dispatch: {}
-  schedule:
-    - cron: '0 8 * * *' # 8:00 AM UTC time every day
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   schedule:
+#     - cron: '0 8 * * *' # 8:00 AM UTC time every day
 
 jobs:
   validate-pending-issues:

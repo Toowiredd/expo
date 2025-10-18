@@ -1,8 +1,12 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: issue-closed.yml.backup
 name: Process when issue is closed
 
 on:
-  issues:
-    types: [closed]
+  workflow_dispatch:  # Manual trigger only
+#   issues:
+#     types: [closed]
 
 jobs:
   run-on-issue-accepted:

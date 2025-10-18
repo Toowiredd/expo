@@ -1,24 +1,28 @@
+# DISABLED AUTO-RUN: Originally triggered on auto-triggers
+# Converted to manual execution only - 2025-10-18
+# Backup available at: pr-labeler.yml.backup
 name: PR labeler
 
 on:
-  workflow_dispatch: {}
-  push:
-    branches: [main]
-    paths:
-      - .github/workflows/pr-labeler.yml
-      - apps/bare-expo/**
-      - apps/test-suite/**
-      - packages/**
-      - yarn.lock
-      # Adding new paths should also update the following "Get the base commit" step's paths
-  pull_request:
-    types: [opened, synchronize]
-    paths:
-      - .github/workflows/pr-labeler.yml
-      - apps/bare-expo/**
-      - apps/test-suite/**
-      - packages/**
-      - yarn.lock
+  workflow_dispatch:  # Manual trigger only
+#   workflow_dispatch: {}
+#   push:
+#     branches: [main]
+#     paths:
+#       - .github/workflows/pr-labeler.yml
+#       - apps/bare-expo/**
+#       - apps/test-suite/**
+#       - packages/**
+#       - yarn.lock
+#       # Adding new paths should also update the following "Get the base commit" step's paths
+#   pull_request:
+#     types: [opened, synchronize]
+#     paths:
+#       - .github/workflows/pr-labeler.yml
+#       - apps/bare-expo/**
+#       - apps/test-suite/**
+#       - packages/**
+#       - yarn.lock
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
